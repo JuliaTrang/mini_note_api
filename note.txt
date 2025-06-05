@@ -1,1 +1,50 @@
-chihuahua he he hua hua
+# Project: Mini Note API
+# Mục tiêu: Tạo một RESTful API đơn giản để quản lý ghi chú
+
+## Chức năng chính:
+- Tạo ghi chú mới (/create)
+- Xem danh sách ghi chú (/read)
+- Xoá ghi chú theo ID (/delete)
+
+## Chi tiết endpoint:
+
+1. POST /create
+- Mô tả: Tạo một ghi chú mới
+- Body (JSON):
+  {
+    "title": "Ghi chú hôm nay",
+    "content": "Phải luyện 2 bài LeetCode"
+  }
+- Phản hồi:
+  {
+    "id": 1,
+    "message": "Note created"
+  }
+
+2. GET /read
+- Mô tả: Trả về danh sách tất cả ghi chú đã tạo
+- Phản hồi:
+  [
+    {
+      "id": 1,
+      "title": "Ghi chú hôm nay",
+      "content": "Phải luyện 2 bài LeetCode"
+    },
+    ...
+  ]
+
+3. DELETE /delete/:id
+- Mô tả: Xoá ghi chú theo ID
+- Ví dụ: DELETE /delete/1
+- Phản hồi:
+  {
+    "message": "Note deleted"
+  }
+
+## Ghi chú thêm:
+- Dữ liệu sẽ được lưu tạm vào file hoặc memory (chưa dùng DB).
+- Sau này có thể mở rộng thêm các tính năng như:
+  - Sửa ghi chú
+  - Ghi chú có thời gian tạo
+  - Đăng nhập trước khi thêm/xoá
+
